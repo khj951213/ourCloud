@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" enctype="multipart/form-data" asp-controller="FileUpload" asp-action="Index">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>upload one or more file using this form</p>
+            <input type="file" name="files" multiple />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Upload" />
+
+            <script type="text/javascript">
+                $('file').bind('change', function () {
+                    alert('This file size is: ' + this.files[0].size / 1024 / 1024 + "MiB");
+                });
+            </script>
+        </div>
+    </div>
+</form>
